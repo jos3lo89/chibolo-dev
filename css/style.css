@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+/* estilos generales START */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.2s linear;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    font-size: 62.5%;
+    /*1rem = 10px*/
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-claro: #f2f7f5;
+    --txt-color: #00473e;
+    --boton-color: #faae2b;
+    --span-color: #fa5246;
+    --bg-light: #fff;
+}
+
+.night-mode {
+    --bg-claro: #232946;
+    --txt-color: #fffffe;
+    --boton-color: #eebbc3;
+    --span-color: #b8c1ec;
+    --bg-light: #121629;
+}
+
+body {
+    background-color: var(--bg-claro);
+}
+
+/* estilos generales END */
+
+/* header START */
+.header {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+    background-color: var(--bg-claro);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.header .logo {
+    font-size: 3rem;
+    color: var(--txt-color);
+    text-transform: capitalize;
+}
+
+.header .logo span {
+    color: var(--span-color);
+}
+
+.header .navBar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.header .navBar a {
+    color: var(--txt-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.header .navBar a:hover {
+    color: var(--boton-color);
+}
+
+.header .btns {
+    /* background-color: #fa5246; */
+    display: flex;
+    gap: 1rem;
+}
+
+.header .btns .nightBtn {
+    width: 3rem;
+    height: 3rem;
+}
+
+.header .btns .nightBtn i {
+    color: #faae2b;
+    font-size: 2.6rem;
+    cursor: pointer;
+}
+
+#BtnNight.bxs-moon {
+    transform: rotate(360deg);
+    color: #b8c1ec;
+}
+
+.header .btns .menuBtn {
+    width: 3rem;
+    display: none;
+    height: 3rem;
+}
+
+.header .btns .menuBtn i {
+    font-size: 3rem;
+    color: var(--txt-color);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header .btns .menuBtn {
+        display: inline;
+    }
+
+    .header .navBar {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        padding: 1rem 0 1rem 1rem;
+        border-bottom: 2px solid var(--span-color);
+        border-top: 2px solid var(--span-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        background-color: var(--bg-claro);
+    }
+
+    .header .navBar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    #menu-btn.bx-x {
+        transform: rotate(180deg);
+    }
+}
+
+/* header END */
+
+/* main page START */
+.mainPage {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 10rem;
+    display: flex;
+    gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .mainPage {
+        flex-direction: column;
+        margin-top: 0;
+    }
+}
+
+.mainPage .datosMainPage h2 {
+    color: var(--txt-color);
+    font-size: 4rem;
+    text-transform: capitalize;
+    cursor: default;
+}
+
+.mainPage .datosMainPage h2 span {
+    color: var(--txt-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+    cursor: default;
+}
+
+.mainPage .datosMainPage h3 {
+    color: var(--boton-color);
+    font-size: 3rem;
+    text-transform: capitalize;
+    cursor: default;
+    font-weight: 400;
+}
+
+.mainPage .datosMainPage p {
+    color: var(--txt-color);
+    font-size: 1.6rem;
+    text-transform: lowercase;
+    cursor: default;
+    font-weight: 200;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.mainPage .datosMainPage a {
+    color: var(--txt-color);
+    font-size: 1.6rem;
+    background-color: var(--bg-claro);
+    padding: 1rem;
+    border: 2px solid var(--txt-color);
+}
+
+.mainPage .datosMainPage a span {
+    color: #fa5246;
+    text-transform: uppercase;
+}
+
+.mainPage .datosMainPage a:hover {
+    background-color: var(--boton-color);
+}
+
+.mainPage .photoMainPage {
+    width: 100%;
+    height: auto;
+}
+
+.mainPage .photoMainPage .slidesBox {
+    width: 100%;
+    height: 100%;
+}
+
+.mainPage .photoMainPage .slidesBox .slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPage .photoMainPage .slidesBox .slides img {
+    width: auto;
+    height: 300px;
+}
+
+/* main page END */
+
+/* proyectos START */
+.proyectos {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 5rem;
+}
+
+.proyectos .proyectosTitle {
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+.proyectos .proyectosTitle p {
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--txt-color);
+}
+
+.pryectosBox {
+    width: 100%;
+    height: auto;
+    display: grid;
+    padding: 0px 30px 0px 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 340px;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.pryectosBox .itemProyect {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pryectosBox .itemProyect .imgBox {
+    width: 250px;
+    height: 160px;
+}
+
+.pryectosBox .itemProyect img {
+    width: 100%;
+    height: 100%;
+}
+
+.pryectosBox .itemProyect h3 {
+    color: var(--boton-color);
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.pryectosBox .itemProyect p {
+    display: block;
+    color: var(--txt-color);
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+    max-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .pryectosBox .itemProyect p {
+        max-width: 270px;
+    }
+}
+
+.pryectosBox .itemProyect a {
+    display: block;
+    /* background-color: var(--boton-color); */
+    color: var(--txt-color);
+    font-size: 1.5rem;
+    border: 2px solid var(--txt-color);
+    padding: .5rem;
+    margin: .5rem;
+    width: 7.5rem;
+    text-transform: capitalize;
+}
+
+.pryectosBox .itemProyect a:hover {
+    background-color: var(--boton-color);
+    color: var(--txt-color);
+    border-radius: 1rem;
+}
+
+/* proyectos END */
